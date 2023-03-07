@@ -1,0 +1,45 @@
+info:
+  contact:
+    name: API Support
+  termsOfService: http://swagger.io/terms/
+paths:
+  /v1/status:
+    get:
+      description: This return API status
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: api pid and ldap status
+          schema:
+            type: string
+      summary: HealthCheck Endpoint
+  /v1/usercheck/{isid}:
+    get:
+      description: This will validate if user is part of the group
+      parameters:
+      - description: User isid
+        in: path
+        name: isid
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: true or false
+          schema:
+            type: string
+      summary: UserCheck
+  /v1/usercount:
+    get:
+      description: This will return number of users in the group
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: success or failure
+          schema:
+            type: string
+      summary: UserGroupCount
+swagger: "2.0"

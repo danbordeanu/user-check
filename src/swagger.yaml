@@ -1,0 +1,4 @@
+version: 1.0
+title: GROUP-CHECK
+description: GROUP-CHECK validator
+basepath: /api
